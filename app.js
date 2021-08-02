@@ -107,7 +107,10 @@ app.get("/posts/:postid", function(req, res) {
 
 });
 
-
-app.listen(1075, function() {
-  console.log("Server started on port 1075");
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 1075;
+}
+app.listen(port, function() {
+  console.log("Server started Successfully");
 });
